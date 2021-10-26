@@ -96,7 +96,5 @@ const addButtons = () => {
 
 
 window.onload = () => {
-  addButtons()
-  // showPokemon()
-  // console.log(getAllPokemons())
+  setTimeout(() => addButtons(), 6000)
 }
