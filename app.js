@@ -25,11 +25,13 @@ const getPokemon = () => {
     .then(data => data);
 };
 
+const pokemonImg = document.createElement('img');
+
 const showPokemon = async () => {
   const pokemon = await getPokemon();
   const pokemonQuizTitle = document.createElement('h1');
-  const pokemonDiv = document.createElement('div');
-  const pokemonImg = document.createElement('img');
+  const pokemonDiv = document.querySelector('.display-pokemon');
+  
   pokemonQuizTitle.classList.add('pokemon-quiz-title')
   pokemonDiv.classList.add('pokemon');
   pokemonImg.classList.add('pokemon-img');
@@ -37,11 +39,64 @@ const showPokemon = async () => {
   pokemonQuizTitle.innerText = 'Quem é esse pokemon???'
   pokemonDiv.appendChild(pokemonQuizTitle);
   pokemonDiv.appendChild(pokemonImg);
-  appContainer.appendChild(pokemonDiv);
+  return pokemon
 };
 
 
+const addOptions = async () => {
+  const pokemons = await getAllPokemons();
+  const button = document.createElement('button')
+  button.innerText = pokemons.results[rand(0, 151)].name;
+  button.addEventListener('click', () => {
+    button.classList.add('wrong-answer')
+  })
+  return button;
+};
+
+const options = document.querySelector('.options');
+const applyOptions = async () => {
+  const option = await addOptions();
+  options.appendChild(option);
+}
+  
+const resultButton = async () => {
+  const result = await showPokemon();
+  const button = document.createElement('button')
+  button.innerText = result.name;
+  button.addEventListener('click', () => {
+    button.classList.add('right-answer');
+    pokemonImg.src = result.sprites.front_default;
+    setTimeout(() => alert('PARABENS!!!'),1000)
+    setTimeout(() => location.reload(),1000);
+  })
+  options.appendChild(button);
+}
+
+const randTime = (min, max) => {
+  max *= 1000;
+  min *= 1000;
+  Math.floor(Math.random()* (max - min) + min)
+};
+
+const addButtons = () => {
+  setTimeout(() => {
+    resultButton();  
+  }, randTime(0.5,2));
+  setTimeout(() => {
+    applyOptions();
+  }, randTime(0.5,2));
+  setTimeout(() => {
+    applyOptions();
+  }, randTime(0.5,2));
+  setTimeout(() => {
+    applyOptions();
+  }, randTime(0.5,2));
+}
+
+
+
 window.onload = () => {
-  showPokemon()
+  addButtons()
+  // showPokemon()
   // console.log(getAllPokemons())
 }

@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightblue;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-container {
+  width: 75vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.display-pokemon {
+  text-align: center;
+  background-color: lightcoral;
+  border: 1px solid black;
+  border-radius: 1.5rem;
+  width: 85%;
+  height: 45%;
+}
+
+.pokemon-quiz-title {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  width: 9rem;
+}
+
+.options {
+  background-color: lightpink;
+  border: 1px solid black;
+  border-radius: 1.5rem;
+  width: 85%;
+  height: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+button {
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: lightgoldenrodyellow;
+  width: 35%;
+  height: 3rem;
+  transition: all 0.3s linear;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s linear;
+}
+
+.wrong-answer {
+  background-color: red;
+  text-decoration: line-through;
+    box-shadow: 0px 0px 50px 12px #b70000
+}
+
+.wrong-answer:hover {
+  transform: translateY(-3px);
+  background-color: red;
+  transition: all 0.3s linear;
+}
+
+.right-answer {
+  background-color: green;
+  font-size: 20px;
+  box-shadow: 0px 0px 50px 12px #12B700
+}
+
+.right-answer:hover {
+  transform: translateY(-3px);
+  background-color: green;
+  transition: all 0.3s linear;
+}
