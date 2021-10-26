@@ -38,12 +38,16 @@ body {
   height: 45%;
 }
 
-.pokemon-quiz-title {
-  font-family: "Poppins", sans-serif;
+h1 {
+  margin-top: 2rem;
 }
 
 img {
-  width: 9rem;
+  margin-top: 3rem;
+}
+
+.pokemon-quiz-title {
+  font-family: "Poppins", sans-serif;
 }
 
 .options {

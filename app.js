@@ -66,7 +66,7 @@ const resultButton = async () => {
   button.addEventListener('click', () => {
     button.classList.add('right-answer');
     pokemonImg.src = result.sprites.front_default;
-    setTimeout(() => alert('PARABENS!!!'),1000)
+    setTimeout(() => alert('PARABÉNS!!!\nVocê já é um Mestre Pokemon'),1000)
     setTimeout(() => location.reload(),1000);
   })
   options.appendChild(button);
