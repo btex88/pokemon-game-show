@@ -79,22 +79,20 @@ const randTime = (min, max) => {
 };
 
 const addButtons = () => {
-  setTimeout(() => {
-    resultButton();  
-  }, randTime(0.5,2));
+  resultButton()
   setTimeout(() => {
     applyOptions();
-  }, randTime(0.5,2));
+  }, randTime(1,2));
   setTimeout(() => {
     applyOptions();
-  }, randTime(0.5,2));
+  }, randTime(1,2));
   setTimeout(() => {
     applyOptions();
-  }, randTime(0.5,2));
+  }, randTime(1,2));
 }
 
 
 
 window.onload = () => {
-  setTimeout(() => addButtons(), 6000)
+  setTimeout(() => addButtons(), 4000)
 }
