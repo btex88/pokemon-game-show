@@ -27,11 +27,15 @@ const getPokemon = () => {
 
 const showPokemon = async () => {
   const pokemon = await getPokemon();
+  const pokemonQuizTitle = document.createElement('h1');
   const pokemonDiv = document.createElement('div');
   const pokemonImg = document.createElement('img');
+  pokemonQuizTitle.classList.add('pokemon-quiz-title')
   pokemonDiv.classList.add('pokemon');
   pokemonImg.classList.add('pokemon-img');
   pokemonImg.src = pokemon.sprites.back_shiny;
+  pokemonQuizTitle.innerText = 'Quem é esse pokemon???'
+  pokemonDiv.appendChild(pokemonQuizTitle);
   pokemonDiv.appendChild(pokemonImg);
   appContainer.appendChild(pokemonDiv);
 };
@@ -39,4 +43,5 @@ const showPokemon = async () => {
 
 window.onload = () => {
   showPokemon()
+  // console.log(getAllPokemons())
 }
